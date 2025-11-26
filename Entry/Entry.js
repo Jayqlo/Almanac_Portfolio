@@ -6,8 +6,6 @@ if (!loggedUser) {
 
 const messages = [
     "Welcome! These reminders are important before accessing the website.",
-    "Please respect privacy, security, and responsible usage guidelines.",
-    "All activities are monitored to ensure safe and ethical behavior.",
     "Final reminder — click Continue if you understand and agree."
 ];
 
