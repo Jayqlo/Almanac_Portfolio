@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Almanac_Portfolio</title>
+  <link rel="stylesheet" href="Almanac.css">
+</head>
+<body>
+  <!-- MATRIX BACKGROUND -->
+  <div id="matrix">
+    <canvas id="matrixCanvas"></canvas>
+  </div>
+
+  <!-- APP CONTENT -->
+  <div id="appLayer">
+    <!-- LOGIN PAGE (default) -->
+    <div id="loginPage" class="page-visible">
+      <div id="loginCard">
+        <h2 class="accent">LOGIN</h2>
+        <input id="identifier" placeholder="Identifier / Codename / Email" autocomplete="off" />
+        <input type="date" id="dateInput" />
+        <button id="loginBtn">Clock In</button>
+        <div class="small-note">Enter your identifier and date to access your Almanac.</div>
+      </div>
+    </div>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" style="display:none;">
+      <!-- TOP BAR -->
+      <div id="topControls">
+        <div id="leftControls">
+          <!-- 🆕 Silhouette Button -->
+          <button id="silhouetteBtn" class="control-btn">Silhouette</button>
+        </div>
+
+        <div id="clockWrap">
+          <div id="dateTimeDisplay">--</div>
+          <div id="dateLine">--</div>
+        </div>
+
+        <div id="hamburgerWrap">
+          <div id="hamburger" class="control-btn" style="display:none;">☰</div>
+          <div id="menuDropdown" class="menu-hidden">
+            <div class="menu-header">Tools</div>
+            <div id="menuReminders" class="menu-item">Reminders</div>
+            <div id="menuNotes" class="menu-item">Notes</div>
+            <div id="menuPortfolio" class="menu-item">Portfolio</div>
+            <div class="menu-sep"></div>
+
+            <div class="menu-header">Others</div>
+            <div id="menuIntro" data-info="intro" class="menu-item">Introduction</div>
+            <div id="menuPrivacy" data-info="privacy" class="menu-item">Privacy & Policy</div>
+            <div id="menuAbout" data-info="about" class="menu-item">About</div>
+            <div id="menuHelp" data-info="help" class="menu-item">Help</div>
+            <div id="menuHotline" data-info="hotline" class="menu-item">Hotline</div>
+
+            <div class="menu-sep"></div>
+            <div id="menuLogout" class="menu-item danger">Logout</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOME CONTENT -->
+      <div id="homeContent">
+        <h1 class="accent">Welcome, <span id="userName"></span>!</h1>
+        <img id="profilePic" src="" alt="Profile" class="profile-pic" />
+
+        <div class="card" data-target="profile">👤 Profile
+          <div id="profile" class="card-content"></div>
+        </div>
+
+        <div class="card" data-target="camera">📸 Camera Rolls
+          <div id="camera" class="card-content">
+            <!-- ✅ Replaced this section with your static image gallery -->
+            <div id="cameraGallery" class="gallery">
+              <div class="image-gallery">
+                <img
+                  src="https://www.dropbox.com/scl/fi/cowoiuwng8tdlkq10gwq0/1760051000422.jpg?rlkey=ss6y0gckti94psyboo2aaj7x4&st=qbe4gtv0&raw=1"
+                  alt="First Image"
+                  style="width:100%; border-radius:6px;"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" data-target="music">🎵 Music
+          <div id="music" class="card-content"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INFO POPUP -->
+    <div id="infoPopup" class="popup-hidden">
+      <div id="infoInner">
+        <button id="infoClose" class="modal-close">×</button>
+        <h2 id="infoTitle" class="accent"></h2>
+        <div id="infoText" class="info-text"></div>
+      </div>
+    </div>
+
+<!-- 🆕 PORTFOLIO MODAL -->
+<div id="portfolioModal" style="
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.95);
+  color:#0f0;
+  z-index:200;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-family:monospace;
+  padding:20px;
+">
+  <div id="portfolioInner" style="
+    background:rgba(0,0,0,0.5);
+    border:1px solid #0f0;
+    border-radius:10px;
+    padding:30px;
+    width:90%;
+    max-width:400px;
+    box-shadow:0 0 15px #0f0;
+  ">
+    <button id="portfolioClose" style="
+      position:absolute;
+      top:15px;
+      right:20px;
+      color:#ff3333;
+      font-size:28px;
+      background:none;
+      border:none;
+      cursor:pointer;
+      text-shadow:0 0 10px #ff3333;
+    ">×</button>
+    <h2 class="accent" style="color:#ff3333; text-shadow:0 0 8px #ff3333;">Portfolio</h2>
+    <div id="portfolioContent" style="margin-top:20px;">
+      <h3 style="margin-bottom:10px;">Terminals:</h3>
+      <ul class="terminal-list" id="terminalList" style="
+        list-style:none;
+        padding:0;
+        margin:0;
+        text-align:left;
+      ">
+        <!-- JS will dynamically insert terminal links here -->
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- 🆕 FULLSCREEN IMAGE VIEWER -->
+<div id="imageViewer" class="image-viewer-hidden">
+
+    <!-- Dark overlay / blurred background -->
+    <div id="imageViewerOverlay" class="viewer-overlay"></div>
+
+    <!-- Minimize button -->
+    <button id="viewerCloseBtn" class="viewer-top-btn">—</button>
+
+    <!-- Image counter -->
+    <div id="viewerCounter" class="viewer-counter">1/1</div>
+
+    <!-- Main full-view image -->
+    <img id="viewerImage" class="viewer-image" src="" alt="viewer image">
+
+    <!-- Navigation buttons -->
+    <button id="viewerPrev" class="viewer-nav-btn viewer-prev">&lt;</button>
+    <button id="viewerNext" class="viewer-nav-btn viewer-next">&gt;</button>
+
+</div>
+<!-- 🆕 END IMAGE VIEWER -->
+
+  <!-- SCRIPTS -->
+  <script src="Almanac_Core.js"></script>
+  <script src="Almanac_Main.js"></script>
+  <script src="Almanac_Data.js"></script>
+  <script src="Almanac_Userinf.js"></script>
+
+  <!-- 🆕 Silhouette Button Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const silhouetteBtn = document.getElementById("silhouetteBtn");
+      if (silhouetteBtn) {
+        silhouetteBtn.addEventListener("click", () => {
+          window.location.href = "./Silhouette/Silhouette.html";
+        });
+      }
+    });
+  </script>
+</body>
+</html>

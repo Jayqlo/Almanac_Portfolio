@@ -1,0 +1,679 @@
+/* =========================================
+   BASE & RESET
+========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Courier New", monospace;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  color: #0f0;
+}
+
+/* =========================================
+   MATRIX BACKGROUND
+========================================= */
+#matrix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: #000;
+}
+
+#matrixCanvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* =========================================
+   APP LAYER (above matrix)
+========================================= */
+#appLayer {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
+  color: #bfffbf;
+}
+
+/* =========================================
+   LOGIN PAGE
+========================================= */
+#loginPage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10;
+}
+
+#loginCard {
+  width: 90%;
+  max-width: 400px;
+  padding: 24px;
+  border-radius: 10px;
+  border: 1px solid #ff3333;
+  background: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(255, 51, 51, 0.4);
+  text-align: center;
+}
+
+#loginCard h2 {
+  color: #ff3333;
+  text-shadow: 0 0 10px #ff3333;
+}
+
+#loginCard input,
+#loginCard button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid #0f0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #0f0;
+}
+
+#loginCard button {
+  background: #ff3333;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 0 12px #ff3333;
+  transition: 0.3s ease;
+}
+
+#loginCard button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 18px #ff3333;
+}
+
+/* =========================================
+   HOME PAGE
+========================================= */
+#homePage {
+  position: relative;
+  z-index: 8;
+  background: transparent;
+}
+
+/* TOP BAR */
+#topControls {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 20;
+}
+
+.control-btn {
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  color: #ff3333;
+  padding: 8px 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  cursor: pointer;
+  text-shadow: 0 0 10px #ff3333;
+  transition: 0.3s ease;
+}
+
+.control-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255, 51, 51, 0.15);
+}
+
+/* Clock */
+#clockWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#dateTimeDisplay {
+  color: #ff3333;
+  font-weight: bold;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 5px 12px;
+  text-shadow: 0 0 10px #ff3333;
+}
+
+#dateLine {
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+/* =========================================
+   HAMBURGER MENU
+========================================= */
+#hamburgerWrap {
+  position: relative;
+}
+
+#hamburger {
+  transition: transform 0.4s ease, color 0.3s ease;
+  transform-origin: center;
+}
+
+#hamburger.active {
+  transform: rotate(90deg) scale(1.2);
+  color: #ff6666;
+}
+
+/* Dropdown Menu */
+#menuDropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 200px;
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid #ff3333;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(255, 51, 51, 0.3);
+  max-height: 0;
+  transition: max-height 0.3s ease;
+  z-index: 30;
+}
+
+#menuDropdown.open {
+  max-height: 600px;
+}
+
+.menu-header {
+  color: #ff3333;
+  font-weight: bold;
+  text-align: center;
+  padding: 8px;
+  text-shadow: 0 0 8px #ff3333;
+}
+
+.menu-item {
+  color: #0f0;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+  background: rgba(255, 51, 51, 0.15);
+}
+
+.menu-item.danger {
+  color: #ff3333;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff3333;
+}
+
+.menu-sep {
+  border-top: 1px solid rgba(255, 51, 51, 0.3);
+  margin: 4px 0;
+}
+
+/* =========================================
+   HOME CONTENT
+========================================= */
+#homeContent {
+  margin-top: 120px;
+  padding: 20px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  color: #bfffbf;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #ff3333;
+  box-shadow: 0 0 12px #ff3333;
+  object-fit: cover;
+  margin: 10px auto;
+  display: block;
+}
+
+.card {
+  margin: 16px auto;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #0f0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ff3333;
+  font-weight: bold;
+  cursor: pointer;
+  max-width: 700px;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(255, 51, 51, 0.25);
+}
+
+.card-content {
+  display: none;
+  color: #bfffbf;
+  margin-top: 6px;
+  font-size: 14px;
+}
+
+/* =========================================
+   INFO POPUP
+========================================= */
+#infoPopup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  z-index: 60;
+  align-items: center;
+  justify-content: center;
+}
+
+#infoInner {
+  position: relative;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid #ff3333;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff3333;
+  padding: 20px;
+  width: 90%;
+  max-width: 700px;
+  text-align: center;
+  color: #0f0;
+}
+
+#infoInner h2 {
+  color: #ff3333;
+  text-shadow: 0 0 10px #ff3333;
+  margin-bottom: 10px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #ff3333;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  text-shadow: 0 0 10px #ff3333;
+}
+
+/* =========================================
+   🆕 PORTFOLIO MODAL STYLES
+========================================= */
+#portfolioModal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(0, 0, 0, 0.85);
+  align-items: center;
+  justify-content: center;
+}
+
+#portfolioInner {
+  position: relative;
+  width: 90%;
+  max-width: 700px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #ff3333;
+  border-radius: 12px;
+  box-shadow: 0 0 25px #ff3333;
+  padding: 20px;
+  text-align: center;
+}
+
+#portfolioInner h2 {
+  color: #ff3333;
+  text-shadow: 0 0 10px #ff3333;
+  margin-bottom: 12px;
+}
+
+#portfolioInner h3 {
+  color: #0f0;
+  text-shadow: 0 0 8px #0f0;
+  margin-bottom: 10px;
+}
+
+.portfolio-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #ff3333;
+  cursor: pointer;
+  text-shadow: 0 0 10px #ff3333;
+}
+
+.terminal-list {
+  list-style: none;
+  margin-top: 10px;
+  padding: 0;
+}
+
+.terminal-item {
+  margin: 8px 0;
+}
+
+.terminal-item a {
+  display: inline-block;
+  color: #0f0;
+  text-decoration: none;
+  font-weight: bold;
+  border: 1px solid #0f0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  transition: 0.3s ease;
+}
+
+.terminal-item a:hover {
+  color: #ff3333;
+  border-color: #ff3333;
+  text-shadow: 0 0 10px #ff3333;
+  transform: scale(1.05);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+@media (max-width: 640px) {
+  #dateTimeDisplay {
+    font-size: 13px;
+  }
+
+  .card {
+    width: 95%;
+  }
+
+  #infoInner, #portfolioInner {
+    width: 95%;
+  }
+}
+
+/* =========================================
+   RESPONSIVE & SCROLLABLE LAYOUT UPGRADE
+========================================= */
+
+/* Make the full app scrollable */
+html, body {
+  width: 100%;
+  height: auto;
+  min-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Ensure the main layer scrolls with the page */
+#appLayer {
+  position: relative;
+  min-height: 100vh;
+  overflow: visible;
+  padding-bottom: 60px;
+}
+
+/* Make canvas stay fixed but non-blocking */
+#matrixCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Ensure cards and sections are fully responsive */
+.card,
+#toolkitBox {
+  max-width: 95%;
+  width: 100%;
+  margin: 15px auto;
+}
+
+/* Fix Toolkit buttons layout on smaller screens */
+.toolkit-buttons {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tool-btn {
+  min-width: 120px;
+  max-width: 45%;
+  margin: 6px;
+  padding: 10px 14px;
+}
+
+/* Make flash message fixed but non-obstructive */
+#flashMessage {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+}
+
+/* Responsive typography scaling */
+@media (max-width: 768px) {
+  h1, h2 {
+    font-size: 1.3rem;
+  }
+
+  .toolkit-title {
+    font-size: 16px;
+  }
+
+  .tool-btn {
+    font-size: 14px;
+    max-width: 90%;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+/* ===============================
+   🆕 FULLSCREEN IMAGE VIEWER
+================================*/
+#imageViewer {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.viewer-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(4px);
+  z-index: 9998;
+}
+
+.viewer-image {
+  max-width: 95%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #0f0;
+  z-index: 10000;
+}
+
+/* Close / Minimize button */
+.viewer-top-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #0f0;
+  padding: 8px 14px;
+  color: #0f0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 24px;
+  text-shadow: 0 0 10px #0f0;
+}
+
+/* Navigation arrows */
+.viewer-nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10001;
+  background: rgba(0,0,0,0.6);
+  border: 1px solid #0f0;
+  color: #0f0;
+  font-size: 32px;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  text-shadow: 0 0 8px #0f0;
+}
+
+.viewer-prev {
+  left: 20px;
+}
+.viewer-next {
+  right: 20px;
+}
+
+/* Counter text */
+.viewer-counter {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  color: #0f0;
+  font-size: 20px;
+  z-index: 10001;
+  text-shadow: 0 0 10px #0f0;
+}
+
+/* ================================
+   🟩 PORTFOLIO MODAL STYLING
+================================ */
+#portfolioModal {
+  display: none; /* hidden by default */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  color: #0f0;
+  z-index: 200;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: monospace;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+#portfolioInner {
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid #0f0;
+  border-radius: 12px;
+  padding: 30px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 15px #0f0;
+  position: relative;
+  animation: scaleUp 0.3s ease forwards;
+}
+
+#portfolioClose {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #ff3333;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-shadow: 0 0 10px #ff3333;
+  transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+#portfolioClose:hover {
+  transform: scale(1.2);
+  text-shadow: 0 0 15px #ff5555;
+}
+
+#portfolioContent h3 {
+  color: #0f0;
+  margin-bottom: 10px;
+  text-shadow: 0 0 8px #0f0;
+  letter-spacing: 1px;
+}
+
+.terminal-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.terminal-list li {
+  display: flex;
+  align-items: center;
+  margin: 8px 0;
+  font-size: 18px;
+  text-shadow: 0 0 6px #0f0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideIn 0.3s ease forwards;
+}
+.terminal-list li:nth-child(1) { animation-delay: 0.1s; }
+.terminal-list li:nth-child(2) { animation-delay: 0.2s; }
+.terminal-list li:nth-child(3) { animation-delay: 0.3s; }
+.terminal-list li:nth-child(4) { animation-delay: 0.4s; }
+
+.terminal-list a {
+  color: #0f0;
+  text-decoration: none;
+  margin-left: 6px;
+  font-weight: bold;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+.terminal-list a:hover {
+  color: #7fff00;
+  text-shadow: 0 0 10px #7fff00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes scaleUp {
+  from { transform: scale(0.9); opacity: 0.5; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes slideIn {
+  to { opacity: 1; transform: translateY(0); }
+}
