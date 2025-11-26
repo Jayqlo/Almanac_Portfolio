@@ -1,0 +1,144 @@
+/* 🖤 Page Background */
+body {
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0d0d0d;
+    color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* 🟧 First Box (Main Container) */
+.outer-box {
+    width: 92%;
+    max-width: 900px; /* Increased for larger desktops */
+    background: #1a1a1a;
+    border: 2px solid #ff7f11;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 0 28px rgba(255, 127, 17, 0.4);
+    display: flex;
+    justify-content: center;
+}
+
+/* 🟨 Second Box (Buttons + Message) */
+.middle-box {
+    width: 100%;
+    background: #222222;
+    border-radius: 14px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* 🔄 Progress Message Counter */
+.progress-tracker {
+    text-align: right;
+    font-size: 1rem;
+    color: #ffb066;
+    font-weight: 600;
+}
+
+/* 🟩 Third Box (Message Only) */
+.inner-message-box {
+    flex-grow: 1;
+    min-height: 320px; /* Increased */
+    max-height: 500px; /* More room for desktop */
+    overflow-y: auto;
+    padding: 28px;
+    background: #2b2b2b;
+    border-radius: 12px;
+    border: 1px solid #555;
+    font-size: 1.25rem;  /* Was 1.15 — larger for desktop */
+    line-height: 1.9;
+    letter-spacing: 0.3px;
+}
+
+/* 🔽 Control Button Box */
+.control-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* 🟠 Buttons Style */
+.control-box button {
+    flex: 1;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff7f11;
+    color: #1a1a1a;
+    font-size: 1.05rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+.control-box button:hover {
+    transform: scale(1.06);
+    background-color: #ffa64d;
+}
+
+.control-box button:disabled {
+    background-color: #444;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+    .outer-box {
+        width: 95%;
+        padding: 18px;
+    }
+    .middle-box {
+        padding: 18px;
+    }
+    .inner-message-box {
+        min-height: 200px;
+        max-height: 320px;
+        font-size: 1rem;
+    }
+    .control-box button {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+}
+
+/* 💻 Desktop Optimization */
+@media (min-width: 1024px) {
+    .outer-box {
+        max-width: 1000px; /* Much wider for large screens */
+        padding: 50px;
+    }
+    .inner-message-box {
+        min-height: 380px;
+        max-height: 600px;
+        font-size: 1.35rem;  /* Bigger message text */
+        line-height: 2;
+    }
+    .control-box button {
+        font-size: 1.15rem;
+        padding: 16px;
+    }
+}
+
+/* 🌌 Background Particles Canvas Fix */
+#bgParticles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: #0d0d0d;
+}
