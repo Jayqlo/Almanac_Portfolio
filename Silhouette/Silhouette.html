@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Almanac_Silhouette</title>
+  <link rel="stylesheet" href="Silhouette.css">
+</head>
+<body>
+  <!-- MATRIX BACKGROUND -->
+  <div id="matrix">
+    <canvas id="matrixCanvas"></canvas>
+  </div>
+
+  <!-- MAIN LAYER -->
+  <div id="appLayer">
+    <button id="closeBtn" class="close-btn">×</button>
+    <h1 class="title">SILHOUETTE</h1>
+
+    <!-- FAMILY BOXES -->
+    <div id="familyContainer">
+      <!-- AFFINITY BOX -->
+      <div id="affinityBox" class="family-box">
+        <h2 class="family-title">Affinity</h2>
+        <div id="affinityLogin">
+          <p>Enter your 4-digit passcode:</p>
+          <div id="passcodeGrid">
+            <input maxlength="1" class="passBox" type="password" />
+            <input maxlength="1" class="passBox" type="password" />
+            <input maxlength="1" class="passBox" type="password" />
+            <input maxlength="1" class="passBox" type="password" />
+          </div>
+          <button id="loginBtn">Enter</button>
+          <p class="note">Access is bound to your user credentials.</p>
+        </div>
+
+        <!-- AFFINITY CONTENT -->
+        <div id="affinityContent" style="display:none;">
+          <button id="affinityBack" class="inner-close">×</button>
+          <h2 class="accent"></h2>
+          <div class="info-card">
+            <div><strong>Kinship:</strong> <span id="kinship"></span></div>
+            <div><strong>Name:</strong> <span id="partnerName"></span></div>
+            <div><strong>Anniversary Date:</strong> <span id="anniversaryDate"></span></div>
+            <div><strong>Been Together:</strong> <span id="beenTogether"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IDENTIFICATION DATA BOX (NEW) -->
+      <div id="identBox" class="family-box ident-locked">
+        <h2 class="family-title">Identification Data</h2>
+
+        <!-- locked overlay explanation / input -->
+        <div id="identLockedView" class="ident-locked-view">
+          <p></p>
+          <input id="identDateInput" type="date" />
+          <div style="margin-top:10px;">
+            <button id="identUnlockBtn">Unlock</button>
+          </div>
+          <p class="note" style="margin-top:8px;"></p>
+        </div>
+
+        <!-- loading spinner (hidden until unlock pressed and valid) -->
+        <div id="identLoading" class="ident-loading" style="display:none;">
+          <div class="spinner"></div>
+          <div class="loading-text">Decrypting identity...</div>
+        </div>
+
+        <!-- identification content (hidden until unlocked) -->
+        <div id="identContent" class="ident-content" style="display:none;">
+          <button id="identClose" class="inner-close">×</button>
+          <h3 class="accent" style="text-align:center; margin-bottom:10px;">Identification Data</h3>
+          <div class="info-card">
+            <div><strong>Name (real):</strong> <span id="id_realName"></span></div>
+            <div><strong>Given name:</strong> <span id="id_givenName"></span></div>
+            <div><strong>Middle name:</strong> <span id="id_middleName"></span></div>
+            <div><strong>Middle initial:</strong> <span id="id_middleInitial"></span></div>
+            <div><strong>Last name:</strong> <span id="id_lastName"></span></div>
+            <div><strong>Birthdate:</strong> <span id="id_birthdate"></span></div>
+            <div><strong>Age:</strong> <span id="id_age"></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- USER_SILHOUETTE BOX -->
+      <div id="userSilhouetteBox" class="family-box">
+        <h2 class="family-title collapsible">User_Silhouette</h2>
+        <div class="collapse-content">
+          <div class="collapse-item">• Classified</div>
+          <div class="collapse-item">• Secrecy</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="Silhouette_Core.js"></script>
+  <script src="Silhouette_Userinf.js"></script>
+  <script src="Silhouette_Main.js"></script>
+</body>
+</html>
