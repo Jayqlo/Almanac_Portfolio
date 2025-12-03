@@ -4,12 +4,12 @@ if (!loggedUser) {
     window.location.href = "../../index.html";  // send back to login
 }
 
-const messages = [
+const messages = [  
+    " ! Upcoming Update; New Features : Classified and Qr will be added and live on or before Dec 11th, 2025.", 
     "Welcome! These reminders are important before accessing the website.",
-    "Hi My Dearest User-Guests. I would like to give you a heads-up information about this Website. If you may encounter your profile picture, quintessence-photo, videos, and music are not visible or live. It's for the reason the system are updating. And it's totally normal",
+    "Hi My Dearest User-Guests. I would like to give you a heads-up information about this Website. If you may encounter your profile picture, quintessence-photo, videos, and music are not visible or live. It's for the reason the system are updating. And it's totally normal.",
     "This may take 6-12 hours depending. Typically, approximately 240-360 minutes are required for photo and music. And Video could take 12 hours maximum to integrate.",
-    "Yet The Portfolio are still online. Such as Spotify, Letter, Messages, Mini-games, And Space are accessable.",
-    "Expressing Gratitude for your patience, if any inquiries regards in your account or protection,kindly just go to the hotline to reach us",
+    "Yet The Portfolio are still online. Such as Spotify, Letter, Messages, Mini-games, And Space are accessable. Expressing Gratitude for your patience...",
     "Again, Thank you and have a nice check-in!",
     "Final reminder — click Continue if you understand and agree."
 ];
