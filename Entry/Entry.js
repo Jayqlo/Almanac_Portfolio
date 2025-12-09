@@ -8,7 +8,7 @@ const messages = [
     " ! Upcoming Update; New Features : Classified, and Qr will be added and live on or before Dec 11th, 2025. Remodeling of Almanac Portfolio planning to execute before the year end.", 
     "Welcome! These reminders are important before accessing the website.",
     "Hi Our Dearest User-Guests. I would like to give you a heads-up information about this Website. If you may encounter your profile picture, quintessence-photo, videos, and music are not visible or live. It's for the reason the system are updating. And it's totally normal.",
-    "This may take 6-12 hours depending. Typically, approximately 240-360 minutes are required for photo and music. And Video could take 12 hours maximum to integrate.",
+    "This may take 2 and half-12 hours depending. Typically, approximately 180-300 minutes are required for photo and music. And Video could take 12 hours maximum to integrate Depends on the size.",
     "Yet The Portfolio are still online. Such as Spotify, Letter, Messages, Mini-games, And Space are accessable. Expressing Gratitude for your patience...",
     "Again, Thank you and have a nice check-in!",
     "Final reminder — click Continue if you understand and agree."
