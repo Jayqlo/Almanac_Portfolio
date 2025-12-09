@@ -29,7 +29,8 @@
       profilePic:
         "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Profile_Picture/IMG_20250402_204912_712.jpg",
       terminals: [
-        { title: "Spotify", link: "https://open.spotify.com/playlist/2XrBlGt7CWCsy6Ox1jfn9N?si=_2Cv4hIcSMqasPGUxkD17A&pi=r5sDk5jeQpSxZ" },
+        { title: "Spotify", link: "https://open.spotify.com/playlist/2XrBlGt7CWCsy6Ox1jfn9N?si=VZ9nsAALS6a-LeYQT33qiA&pt=54fe2ac8f8a609bf4970d3010c792c49&pi=8H-CYvyqQii-t" },
+{ title: "Radio Garden", link: "https://radio.garden/" },
         { title: "11.12_Scroll Letter", link: "https://jayqlo.github.io/11.12_Scroll-Letter/" },
         { title: "10.12 Letter", link: "https://jayqlo.github.io/MMXXV_12_10/" },
         { title: "8-12", link: "https://jayqlo.github.io/8.12/" },
