@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code</title>
+    <link rel="stylesheet" href="Qr.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+</head>
+<body>
+    <div class="qr-container">
+        <h1 id="platform-name">Platform</h1>
+        <canvas id="qr-code"></canvas>
+        <p id="link-display">Link </p>
+
+        <div class="button-group">
+            <button id="copy-btn">Copy</button>
+            <button id="open-btn">Open</button>
+            <button id="back-btn">Back</button>
+        </div>
+    </div>
+
+    <script src="Qr_Main.js"></script>
+</body>
+</html>
