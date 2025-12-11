@@ -1,1 +1,122 @@
-lll
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classified</title>
+    <link rel="stylesheet" href="Classified.css" />
+</head>
+<body>
+    <div class="container">
+        <h1 class="classified-label">Classified</h1> 
+        <header class="header">
+            <h2 id="greeting"></h2>
+        </header>
+
+        <section class="contact-info">
+            <h3>Contact Information</h3>
+            <p id="phone"></p>
+            <p id="landline"></p>
+            <p id="email"></p>
+        </section>
+
+        <section class="social-info">
+         <h3>Social Channel</h3>
+
+         <div class="info-row"> 
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181137.jpg"> 
+         <span class="facebook">Facebook :</span>
+         <a id="facebook" class="value"></a></div>
+         <button class="qr-btn" data-type="facebook" onclick="openQR('facebook')"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+         
+         <div class="info-row"> 
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181121.jpg">
+         <span class="messenger">Messenger :</span> 
+         <a id="messenger" class"value"></a> </div>
+         <button class="qr-btn" data-type="messenger"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+         
+         <div class="info-row"> 
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181157.jpg"> 
+         <span class="instagram">Instagram :</span>
+         <a id="instagram" class="value"></a></div> 
+         <button class="qr-btn" data-type="Instagram"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+         
+         <div class="info-row">
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181228.jpg"> 
+         <span class="tiktok">TikTok :</span>
+         <a id="tiktok" class="value"></a></div> 
+         <button class="qr-btn" data-type="tiktok"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+         
+         <div class="info-row"> 
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181228.jpg"> 
+         <span class="tiktok_business">Tiktok :</span>
+         <a id="tiktok_business" class="value"></a></div>
+         <button class="qr-btn" data-type="tiktok_business"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+         
+         <div class="info-row"> 
+         <div class="left-side">
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-085135.jpg"> 
+         <span class="twitter">Twitter/ X :</span>
+         <a id="twitter" class="value"></a></div>
+         <button class="qr-btn" data-type="twitter"> 
+         <img src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-083743.jpg" class="qr-icon"> </button></div>
+        </section>
+
+        <section class="conference-info">
+          <h3>Conference / Communication</h3>
+
+         <div class="info-row"> 
+         <div class="left-side"> 
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181653.jpg"> 
+         <span class="viber">Viber :</span>
+         <a id="viber" class="value"></a></div></div>
+         
+         <div class="info-row"> 
+         <div class="left-side"> 
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-090629.jpg"> 
+         <span class="zoom">Zoom :</span>
+         <a id="zoom" class="value"></a></div></div>
+         
+         <div class="info-row"> 
+         <div class="left-side"> 
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181724.jpg"> 
+         <span class="teams">Teams :</span> 
+         <a id="teams" class="value"></a></div></div>
+         
+         <div class="info-row"> 
+         <div class="left-side"> 
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-090730.jpg">
+         <span class="whatsapp">Whatsapp :</span> 
+         <a id="whatsapp" class="value"></a></div></div>
+         
+         <div class="info-row"> 
+         <div class="left-side"> 
+         <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251211-090817.jpg">
+         <span class="telegram">Telegram :</span>
+         <a id="telegram" class="value"></a></div></div>
+         
+          <div class="info-row"> 
+          <div class="left-side">
+          <img class="icon" src="https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/Classified_Assets/Screenshot_20251130-181623.jpg">
+          <span class="google_meet">Google Meet :</span>
+          <a id="google_meet" class="value"></a></div></div>
+        </section>
+        
+        <div class=".Silhouette-label"><a href="../Silhouette.html">Return to Silhouette</a></div>
+    </div>
+
+    <!-- Correct script order -->
+    <script src="Classified_UserInfo.js"></script>
+    <script src="Classified_Main.js"></script>
+</body>
+</html>
