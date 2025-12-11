@@ -225,10 +225,10 @@ body {
 }
 
 .collapse-item {
-  color: #ff3333;
-  font-size: 16px;
+  color: white;
+  font-size: 22px;
   margin: 8px 0;
-  text-shadow: 0 0 6px #ff3333;
+  text-shadow: 0 0 6px black;
 }
 
 .collapsible.active + .collapse-content {
