@@ -234,10 +234,10 @@
       musicTracks: [
         {
           title: "Miley Cyrus - Adore You (Official Video)",
-          src: "Almanac_LocalStorage.Data/User_FranzFries/Music/Miley_Cyrus_-_Adore_You_(Official_Video).mp3"
+          src: "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Music/Miley_Cyrus_-_Adore_You_(Official_Video).mp3"
         },
-        { title: "Gayuma - NOBITA & Yeng Constantino(Official Music Video)", src: "Almanac_LocalStorage.Data/User_FranzFries/Music/Gayuma_-_NOBITA_&amp;_Yeng_Constantino(Official_Music_Video).mp3" },
-        { title: "A1 - Heaven By Your Side",src: "Almanac_LocalStorage.Data/User_FranzFries/Music/A1_-_Heaven_By_Your_Side_(Audio).mp3" },
+        { title: "Gayuma - NOBITA & Yeng Constantino(Official Music Video)", src: "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Music/Gayuma_-_NOBITA_%26_Yeng_Constantino(Official_Music_Video).mp3" },
+        { title: "A1 - Heaven By Your Side",src: "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Music/A1_-_Heaven_By_Your_Side_(Audio).mp3" },
         { title: "", src: "" },
         { title: "", src: "" },
       ]
