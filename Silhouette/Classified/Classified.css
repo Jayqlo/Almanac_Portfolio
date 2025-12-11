@@ -1,0 +1,124 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.classified-label {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.header {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.header h2 {
+  font-size: 1.3em;
+  font-weight: normal;
+  color: #444;
+}
+
+.contact-info,
+.social-info,
+.conference-info {
+  margin: 25px 0;
+  text-align: left;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  font-size: 0.97em;
+}
+
+h3 {
+  text-decoration: underline;
+  font-size: 1.3em;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+p {
+  margin: 6px 0;
+  font-size: 1em;
+  color: #555;
+}
+
+.value {
+    text-decoration: none;
+    margin-left: 5px;
+    font-weight: 500;
+}
+
+.value-enabled {
+    color: #1a73e8; /* blue clickable */
+    cursor: pointer;
+}
+
+.value-disabled {
+    color: #9e9e9e; /* gray */
+    pointer-events: none;
+}
+
+.icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+/** 3 Family boxes w/ qr and positions **/
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 8px 0;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.qr-btn {
+    background: none; 
+    color: none; 
+    border: none; 
+    padding: 4px 10px; 
+    border-radius: 6px; 
+    cursor: pointer; 
+    font-size: 0.9em; 
+    margin-left: 10px;
+}
+
+.qr-btn:hover {
+    opacity: 0.7;
+}
+
+.qr-icon {
+    width: 20px;
+    height: 20px;
+}
