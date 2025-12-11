@@ -222,8 +222,8 @@
         "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Quintessence/IMG_20251112_180526_184.jpg"
       ],
       videos: [
-        "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/lv_0_20250309001300.mp4",
-        "https://www.dropbox.com/scl/fi/d0qdivyj9gpy1cr2n5pj7/VID_20250308_163106.mp4?rlkey=o4o9cnz2i3ohm38hyyhbf39oc&st=qmf47gzd&raw=1",
+        "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Video/VID_20250220_100939_230.mp4",
+        "https://pub-f1cc6487bcfe4794acddbdc0eff6668e.r2.dev/User_FranzFries/Video/lv_0_20250309001300.mp4",
         "Almanac_LocalStorage.Data/User_FranzFries/Video/VID_20250220_100939_230.mp4",
         "https://www.dropbox.com/scl/fi/wog49x9y61k5293latn1j/VID_20250902_213411.mp4?rlkey=681xvdy14frcpay5bo4009vqp&st=f0m4dalu&raw=1",
         "https://www.dropbox.com/scl/fi/tv4dtiovqpohjo23t97ig/VID_20240620_172103.mp4?rlkey=b4fkdxqax7ghl32o16lqb5ik4&st=irhdfrgs&raw=1",
